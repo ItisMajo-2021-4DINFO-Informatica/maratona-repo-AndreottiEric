@@ -1,0 +1,19 @@
+﻿<Window x:Class="AndreottiMaratonaApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AndreottiMaratonaApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750" Width="1000">
+    <StackPanel>
+        <TextBox x:Name="TxtNomeAtleta" Text="Nome dell'atleta" Margin="10"/>
+        <TextBox x:Name="TxtSocietà" Text="Società" Margin="10"/>
+        <TextBox x:Name="TxtTempo" Text="Tempo impiegato" Margin="10"/>
+        <TextBox x:Name="TxtCittà" Text="Città" Margin="10"/>
+        <Button Name="MostraMaratone" Content="Mostra tutte le maratone" Margin="10"></Button>
+        <Button Name="Salva" Content="Salva" Click="BtnSalva_Click" Margin="10"/>
+        <Button x:Name="BtnSalvaFile" Margin="10" Content="Salva tutto su file" Click="BtnSalvaFile_Click"/>
+        <DataGrid x:Name="DgElencoMaratone" VerticalScrollBarVisibility="Visible" Height="230" CurrentCellChanged="DgElencoDati_CurrentCellChanged"/>
+    </StackPanel>
+</Window>
