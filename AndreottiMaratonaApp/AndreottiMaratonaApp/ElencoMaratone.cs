@@ -37,7 +37,7 @@ namespace AndreottiMaratonaApp
             while(!readerDati.EndOfStream)
             {
                 string riga = readerDati.ReadLine();
-                // Rossi Fabio % Fiamme Blu % 2h18m % Torino
+                // Rossi Fabio%Fiamme Blu%2h18m%Torino
                 string[] campi = riga.Split('%');
 
                 Maratona maratona = new Maratona();
@@ -50,10 +50,19 @@ namespace AndreottiMaratonaApp
             }
         }
 
-
-        internal void EliminaConCodice(int rowIndex)
+        public int CercaNomeCittà(string nome, string città)
         {
-            Elenco.RemoveAt(rowIndex);
+            int minuti = 0;
+            foreach(var m in Elenco)
+            {
+                if (m.NomeAtleta==nome && m.Città==città)
+                {
+                    minuti = m.TempoInMinuti;
+                }
+            }
+
+            return minuti;
         }
+        
     }
 }

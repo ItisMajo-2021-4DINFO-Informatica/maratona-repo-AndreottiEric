@@ -13,5 +13,4 @@ namespace AndreottiMaratonaApp
         public int TempoInMinuti { get; set; }
         public string Città { get; set; }
     }
-
 }

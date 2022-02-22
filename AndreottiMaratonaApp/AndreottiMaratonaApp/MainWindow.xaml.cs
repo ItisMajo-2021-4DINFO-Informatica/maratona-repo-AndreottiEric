@@ -26,21 +26,23 @@ namespace AndreottiMaratonaApp
         {
             InitializeComponent();
             Elenco = new ElencoMaratone();
-            DgElencoMaratone.ItemsSource = Elenco.Elenco;            
+            DgrElencoMaratone.ItemsSource = Elenco.Elenco;            
         }
 
-        private void BtnSalva_Click(object sender, RoutedEventArgs e)
+        private void BtnLeggiDaFile_Click(object sender, RoutedEventArgs e)
         {
-            string NomeAtleta = TxtNomeAtleta.Text;
-            string Società = TxtSocietà.Text;
-            string TempoImpiegato = ToString(TxtTempo.Text);
-            string Città = TxtCittà.Text;
+            Elenco.LeggiDaFile();
+            DgrElencoMaratone.Items.Refresh();
+        }
 
-            var maratona = new Maratona();
-            maratona.NomeAtleta = NomeAtleta;
-            maratona.Società = Società;
-            maratona.TempoImpiegato = TempoImpiegato;
-            maratona.Città = Città;
+        private void BtnCerca_Click(object sender, RoutedEventArgs e)
+        {
+            string nome = TxtNomeAtleta.Text;
+            string città = TxtCittà.Text;
+
+            int tempoImpiegato = Elenco.CercaNomeCittà(nome, città);
+            LblTempo.Content = tempoImpiegato.ToString();
+
         }
     }
 }

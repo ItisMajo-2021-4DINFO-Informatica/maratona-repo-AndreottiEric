@@ -5,15 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AndreottiMaratonaApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="750" Width="1000">
+        Title="MainWindow" Height="500" Width="500">
     <StackPanel>
+        <Button x:Name="BtnLeggiDaFile" Content="Leggi dal file" Click="BtnLeggiDaFile_Click"/>
+        <DataGrid x:Name="DgrElencoMaratone" VerticalScrollBarVisibility="Visible" Height="230" />
         <TextBox x:Name="TxtNomeAtleta" Text="Nome dell'atleta" Margin="10"/>
-        <TextBox x:Name="TxtSocietà" Text="Società" Margin="10"/>
-        <TextBox x:Name="TxtTempo" Text="Tempo impiegato" Margin="10"/>
         <TextBox x:Name="TxtCittà" Text="Città" Margin="10"/>
-        <Button Name="MostraMaratone" Content="Mostra tutte le maratone" Margin="10"></Button>
-        <Button Name="Salva" Content="Salva" Click="BtnSalva_Click" Margin="10"/>
-        <Button x:Name="BtnSalvaFile" Margin="10" Content="Salva tutto su file" Click="BtnSalvaFile_Click"/>
-        <DataGrid x:Name="DgElencoMaratone" VerticalScrollBarVisibility="Visible" Height="230" CurrentCellChanged="DgElencoDati_CurrentCellChanged"/>
+        <Button x:Name="BtnCerca" Content="Cerca il tempo impiegato dall'atleta" Click="BtnCerca_Click"/>
+        <Label Name="LblTempo"/>
     </StackPanel>
 </Window>
